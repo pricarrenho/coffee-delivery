@@ -10,10 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     body,
     #__next {
       background: ${theme.colors.background};
-    }
-
-    html {
-      font-size: 62.5%;
+      font-family: ${theme.font.family};
     }
 
     body,
@@ -23,6 +20,7 @@ export const GlobalStyle = createGlobalStyle`
     p {
       margin: 0;
       padding: 0;
+      line-height: 130%;
     }
   `}
 `;

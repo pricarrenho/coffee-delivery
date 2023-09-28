@@ -25,19 +25,17 @@ const colors = {
 };
 
 const font = {
-  family: {
-    primary: "Roboto",
-    secondary: "Baloo2",
-  },
+  family: "Roboto",
   sizes: {
-    xxs: "1.0rem",
-    xs: "1.2rem",
-    s: "1.4rem",
-    m: "1.6rem",
-    l: "2.0rem",
-    lg: "2.4rem",
-    xlg: "3.2rem",
-    g: "4.8rem",
+    xxs: "0.625rem", //10px
+    xs: "0.75rem", //12px
+    s: "0.875rem", //14px
+    m: "1rem", //16px
+    xm: "1.125rem", //18px
+    l: "1.25rem", //20px
+    lg: "1.5rem", //24px
+    xlg: "2rem", // 32px
+    g: "3rem", //48px
   },
 };
 

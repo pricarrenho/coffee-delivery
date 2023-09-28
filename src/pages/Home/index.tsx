@@ -3,6 +3,7 @@ import { Header } from "../../components/Header";
 import { Coffee, Package, ShoppingCart, Timer } from "@phosphor-icons/react";
 import Image from "../../assets/imagemHome.png";
 import * as S from "./styles";
+import { Coffees } from "../../components/Coffees";
 
 export function Home() {
   return (
@@ -22,44 +23,48 @@ export function Home() {
           </S.TitleContent>
 
           <S.ServicesContentContainer>
-            <S.ServicesContent>
-              <S.ServiceContent>
-                <ShoppingCart />
-                <S.ServiceDescription>
-                  Compra simples e segura
-                </S.ServiceDescription>
-              </S.ServiceContent>
+            <S.ServiceContent>
+              <S.IconContainer $styleType={"yellowDark"}>
+                <ShoppingCart size={20} color="#ffffff" weight="fill" />
+              </S.IconContainer>
+              <S.ServiceDescription>
+                Compra simples e segura
+              </S.ServiceDescription>
+            </S.ServiceContent>
 
-              <S.ServiceContent>
-                <Package />
-                <S.ServiceDescription>
-                  Embalagem mantém o café intacto
-                </S.ServiceDescription>
-              </S.ServiceContent>
-            </S.ServicesContent>
+            <S.ServiceContent>
+              <S.IconContainer $styleType={"gray"}>
+                <Package size={20} color="#ffffff" weight="fill" />
+              </S.IconContainer>
+              <S.ServiceDescription>
+                Embalagem mantém o café intacto
+              </S.ServiceDescription>
+            </S.ServiceContent>
 
-            <S.ServicesContent>
-              <S.ServiceContent>
-                <Timer />
-                <S.ServiceDescription>
-                  Entrega rápida e rastreada
-                </S.ServiceDescription>
-              </S.ServiceContent>
+            <S.ServiceContent>
+              <S.IconContainer $styleType={"yellow"}>
+                <Timer size={20} color="#ffffff" weight="fill" />
+              </S.IconContainer>
+              <S.ServiceDescription>
+                Entrega rápida e rastreada
+              </S.ServiceDescription>
+            </S.ServiceContent>
 
-              <S.ServiceContent>
-                <Coffee />
-                <S.ServiceDescription>
-                  O café chega fresquinho até você
-                </S.ServiceDescription>
-              </S.ServiceContent>
-            </S.ServicesContent>
+            <S.ServiceContent>
+              <S.IconContainer $styleType={"purple"}>
+                <Coffee size={20} color="#ffffff" weight="fill" />
+              </S.IconContainer>
+              <S.ServiceDescription>
+                O café chega fresquinho até você
+              </S.ServiceDescription>
+            </S.ServiceContent>
           </S.ServicesContentContainer>
         </S.LeftContent>
 
-        <S.RightContent>
-          <S.Image src={Image} alt="" />
-        </S.RightContent>
+        <S.Image src={Image} alt="" />
       </S.Wrapper>
+
+      <Coffees />
     </Container>
   );
 }
