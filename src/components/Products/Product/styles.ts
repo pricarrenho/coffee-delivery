@@ -1,44 +1,17 @@
 import { css, styled } from "styled-components";
 
-export const Wrapper = styled.div`
-  ${() => css`
-    display: flex;
-    flex-direction: column;
-    padding: 32px 0px;
-    gap: 54px;
-  `}
-`;
-
-export const Title = styled.h2`
-  ${({ theme }) => css`
-    color: ${theme.colors.neutral[800]};
-    font-family: "Baloo 2";
-    font-size: 32px;
-    font-weight: 800;
-  `}
-`;
-
-export const Content = styled.div`
-  ${() =>
-    css`
-      display: flex;
-      gap: 32px;
-    `}
-`;
-
-export const Coffee = styled.div`
+export const Product = styled.div`
   ${() => css`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 16px;
-
     margin-bottom: 80px; //TODO arrumar
   `}
 `;
 
-export const CoffeeFirstContent = styled.div`
+export const ProductFirstContent = styled.div`
   ${() => css`
     display: flex;
     flex-direction: column;
@@ -48,7 +21,7 @@ export const CoffeeFirstContent = styled.div`
   `}
 `;
 
-export const CoffeeSecondContent = styled.div`
+export const ProductSecondContent = styled.div`
   ${() => css`
     display: flex;
     justify-content: space-between;
@@ -67,13 +40,14 @@ export const Image = styled.img`
 export const Tag = styled.div`
   ${({ theme }) => css`
     display: flex;
-    padding: 4px 8px;
+    gap: 8px;
     justify-content: center;
     align-items: center;
-    background: ${theme.colors.yellow[300]};
-    border-radius: 100px;
 
     p {
+      padding: 4px 8px;
+      background: ${theme.colors.yellow[300]};
+      border-radius: 100px;
       color: ${theme.colors.yellow[700]};
       font-size: 10px;
       font-weight: 700;

@@ -7,10 +7,13 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "codegen": "graphql-codegen --config codegen.ts"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.0.13",
+    "graphql": "^16.8.1",
+    "graphql-request": "^6.1.0",
     "phosphor-react": "^1.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -18,6 +21,8 @@
     "styled-components": "^6.0.8"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.0",
+    "@graphql-codegen/client-preset": "^4.1.0",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@types/styled-components": "^5.1.28",

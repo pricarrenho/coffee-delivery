@@ -47,7 +47,8 @@ export const ServicesContentContainer = styled.div`
   ${() => css`
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 20px;
+    column-gap: 36px;
+    row-gap: 20px;
   `}
 `;
 
