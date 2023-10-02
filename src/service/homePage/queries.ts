@@ -14,10 +14,11 @@ export const GET_HOME_PAGE = gql`
           url
         }
         description
+        color
       }
       products {
         id
-        coffeeImage {
+        image {
           url
         }
         tags {

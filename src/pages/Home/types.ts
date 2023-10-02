@@ -16,6 +16,7 @@ export type PageDataProductInfos = {
   id: string;
   description: string;
   icon: PageDataImage;
+  color: IconContainerType;
 };
 
 export type PageDataProducts = {
@@ -23,7 +24,7 @@ export type PageDataProducts = {
   title: string;
   description: string;
   value: string;
-  coffeeImage: PageDataImage;
+  image: PageDataImage;
   tags: PageDataProductsTag[];
 };
 

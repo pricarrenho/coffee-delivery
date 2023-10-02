@@ -10,7 +10,7 @@ export const Product = ({ data }: ProductsProps) => {
   return (
     <S.Product key={data.id}>
       <S.ProductFirstContent>
-        <S.Image src={data.coffeeImage.url} alt="" />
+        <S.Image src={data.image.url} alt="" />
 
         <S.Tag>
           {data.tags.map((tag) => (
