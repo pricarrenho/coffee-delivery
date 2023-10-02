@@ -1,13 +1,15 @@
 import { css, styled } from "styled-components";
 
 export const Product = styled.div`
-  ${() => css`
+  ${({ theme }) => css`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 16px;
-    margin-bottom: 80px; //TODO arrumar
+    border-radius: 6px 36px;
+    background-color: ${theme.colors.neutral[200]};
+    padding: 20px;
   `}
 `;
 
@@ -34,6 +36,7 @@ export const Image = styled.img`
   ${() => css`
     width: 120px;
     height: 120px;
+    margin-top: -40px;
   `}
 `;
 
@@ -45,7 +48,7 @@ export const Tag = styled.div`
     align-items: center;
 
     p {
-      padding: 4px 8px;
+      padding: 8px 16px;
       background: ${theme.colors.yellow[300]};
       border-radius: 100px;
       color: ${theme.colors.yellow[700]};

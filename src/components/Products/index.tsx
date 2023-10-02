@@ -13,7 +13,7 @@ export const Products = ({ data }: ProductsProps) => {
 
       <S.Content>
         {data?.map((product) => (
-          <Product data={product} />
+          <Product data={product} key={product.id} />
         ))}
       </S.Content>
     </S.Wrapper>

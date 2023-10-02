@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
     flex-direction: column;
     padding: 32px 0px;
     gap: 54px;
+    margin-bottom: 54px;
   `}
 `;
 

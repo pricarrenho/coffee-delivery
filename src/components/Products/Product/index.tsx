@@ -1,5 +1,6 @@
 import { PageDataProducts } from "../../../pages/Home/types";
 import { Button } from "../../Button";
+import { InputNumber } from "../../InputNumber";
 import * as S from "./styles";
 
 type ProductsProps = {
@@ -27,7 +28,7 @@ export const Product = ({ data }: ProductsProps) => {
         <S.Value>
           R$ <span>{data.value}</span>
         </S.Value>
-        <p>- 1 +</p>
+        <InputNumber />
         <Button styleType={"tertiary"} icon={"cart"} />
       </S.ProductSecondContent>
     </S.Product>
