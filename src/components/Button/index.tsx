@@ -9,7 +9,7 @@ export const Button = ({
   ...props
 }: ButtonProps) => {
   const icons = {
-    trash: <Trash />,
+    trash: <Trash color="#8047F8" />,
     cart: <ShoppingCart size={22} color="#ffffff" weight="fill" />,
   };
 

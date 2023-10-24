@@ -1,17 +1,20 @@
+import { Link } from "react-router-dom";
 import Logo from "../../assets/logo.png";
+import { Cart } from "../Cart";
 import * as S from "./styles";
 
 export function Header() {
   return (
     <S.Wrapper>
-      <S.Image
-        src={Logo}
-        alt="Imagem de um copo de café roxo com os escritos Coffee Delivery do lado"
-      />
+      <Link to={"/"}>
+        <S.Image
+          src={Logo}
+          alt="Imagem de um copo de café roxo com os escritos Coffee Delivery do lado"
+        />
+      </Link>
 
       <S.RightContent>
-        <p>Input?</p>
-        <p>Carrinho?</p>
+        <Cart />
       </S.RightContent>
     </S.Wrapper>
   );
