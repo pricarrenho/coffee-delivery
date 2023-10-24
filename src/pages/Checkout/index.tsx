@@ -6,11 +6,10 @@ import { InputNumber } from "../../components/InputNumber";
 import { Button } from "../../components/Button";
 import { useHome } from "../Home/useHome";
 import * as S from "./styles";
+import { Link } from "react-router-dom";
 
 export function Checkout() {
   const { pageData } = useHome();
-
-  console.log(pageData?.products[0].image.url);
 
   return (
     <Container>
@@ -139,7 +138,9 @@ export function Checkout() {
               </S.CheckoutValueContent>
             </S.CheckoutValueWrapper>
 
-            <Button styleType="primary">confirmar pedido</Button>
+            <Link to={"/success"}>
+              <Button styleType="primary">confirmar pedido</Button>
+            </Link>
           </S.CoffeeWrapper>
         </S.RightContent>
       </S.CheckoutWrapper>
