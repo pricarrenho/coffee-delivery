@@ -2,14 +2,15 @@ import { Container } from "../../components/Container";
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 import { CurrencyDollar, MapPinLine } from "phosphor-react";
-import { InputNumber } from "../../components/InputNumber";
 import { Button } from "../../components/Button";
-import { useHome } from "../Home/useHome";
-import * as S from "./styles";
 import { Link } from "react-router-dom";
+import { Select } from "../../components/Select";
+import { useGlobalContext } from "../../context/GlobalContext";
+import * as S from "./styles";
+import { CoffeeItem } from "./CoffeeItem";
 
 export function Checkout() {
-  const { pageData } = useHome();
+  const { selectProducts } = useGlobalContext();
 
   return (
     <Container>
@@ -47,11 +48,8 @@ export function Checkout() {
             <S.ContentForm>
               <Input name="neighborhood" placeholder="Bairro" />
               <Input name="city" placeholder="Cidade" />
-            </S.ContentForm>
-
-            <S.InputWidth>
               <Input name="uf" placeholder="UF" />
-            </S.InputWidth>
+            </S.ContentForm>
           </S.AddressAndPaymentWrapper>
 
           <S.AddressAndPaymentWrapper>
@@ -67,7 +65,11 @@ export function Checkout() {
               </div>
             </S.AddressAndPaymentContent>
 
-            <div>Aqui</div>
+            <S.OptionsPayment>
+              <Select children="Cartão de crédito" />
+              <Select children="Cartão de débito" />
+              <Select children="Dinheiro" />
+            </S.OptionsPayment>
           </S.AddressAndPaymentWrapper>
         </S.LeftContent>
 
@@ -75,51 +77,9 @@ export function Checkout() {
           <S.Title>Cafés selecionados</S.Title>
 
           <S.CoffeeWrapper>
-            <S.CheckoutCoffeeWrapper>
-              <S.CheckoutCoffee>
-                <S.Image src={pageData?.products[0].image.url} alt="" />
-
-                <div>
-                  <S.CheckoutCoffeeName>
-                    {pageData?.products[0].title}
-                  </S.CheckoutCoffeeName>
-
-                  <S.CheckoutCoffeeButtons>
-                    <InputNumber />
-                    <Button styleType="secondary" icon="trash">
-                      Remover
-                    </Button>
-                  </S.CheckoutCoffeeButtons>
-                </div>
-              </S.CheckoutCoffee>
-
-              <S.CheckoutCoffeeValue>
-                R$ {pageData?.products[0].value}
-              </S.CheckoutCoffeeValue>
-            </S.CheckoutCoffeeWrapper>
-
-            <S.CheckoutCoffeeWrapper>
-              <S.CheckoutCoffee>
-                <S.Image src={pageData?.products[6].image.url} alt="" />
-
-                <div>
-                  <S.CheckoutCoffeeName>
-                    {pageData?.products[6].title}
-                  </S.CheckoutCoffeeName>
-
-                  <S.CheckoutCoffeeButtons>
-                    <InputNumber />
-                    <Button styleType="secondary" icon="trash">
-                      Remover
-                    </Button>
-                  </S.CheckoutCoffeeButtons>
-                </div>
-              </S.CheckoutCoffee>
-
-              <S.CheckoutCoffeeValue>
-                R$ {pageData?.products[6].value}
-              </S.CheckoutCoffeeValue>
-            </S.CheckoutCoffeeWrapper>
+            {selectProducts.map((product) => (
+              <CoffeeItem product={product} key={product.id} />
+            ))}
 
             <S.CheckoutValueWrapper>
               <S.CheckoutValueContent>

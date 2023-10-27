@@ -1,17 +1,19 @@
-import { useState } from "react";
 import * as S from "./styles";
 
-export const InputNumber = () => {
-  const [numberOfProducts, seNumberOfProducts] = useState(1);
+type InputNumberProps = {
+  value: number;
+  onChange: (value: number) => void;
+};
 
+export const InputNumber = ({ value, onChange }: InputNumberProps) => {
   const handleDecrementProduct = () => {
-    if (numberOfProducts === 1) return;
+    if (value === 1) return;
 
-    seNumberOfProducts(numberOfProducts - 1);
+    onChange(value - 1);
   };
 
   const handleIncreaseProduct = () => {
-    seNumberOfProducts(numberOfProducts + 1);
+    onChange(value + 1);
   };
 
   return (
@@ -20,8 +22,8 @@ export const InputNumber = () => {
       <S.InputNumber
         type="number"
         name="numberOfProducts"
-        value={numberOfProducts}
-        onChange={(e) => seNumberOfProducts(Number(e.target.value))}
+        value={value}
+        onChange={(event) => onChange(Number(event.target.value))}
       />
       <S.InputNumberBtn onClick={handleIncreaseProduct}>+</S.InputNumberBtn>
     </S.Wrapper>

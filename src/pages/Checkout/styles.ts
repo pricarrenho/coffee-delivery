@@ -70,6 +70,11 @@ export const InputWidth = styled.div`
   max-width: 200px;
 `;
 
+export const OptionsPayment = styled.div`
+  display: flex;
+  gap: 12px;
+`;
+
 export const RightContent = styled.div`
   ${() => css`
     display: flex;

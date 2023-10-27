@@ -79,6 +79,7 @@ export const Value = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.neutral[700]};
     font-size: 14px;
+    width: 111px;
 
     span {
       font-family: Baloo 2;

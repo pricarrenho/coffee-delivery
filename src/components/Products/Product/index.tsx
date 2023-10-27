@@ -1,13 +1,24 @@
 import { PageDataProducts } from "../../../pages/Home/types";
 import { Button } from "../../Button";
 import { InputNumber } from "../../InputNumber";
+import { useGlobalContext } from "../../../context/GlobalContext";
+import { useState } from "react";
+import { formattedPrice } from "../../../utils/formatter";
+import { ProductsProps } from "./type";
 import * as S from "./styles";
 
-type ProductsProps = {
-  data: PageDataProducts;
-};
-
 export const Product = ({ data }: ProductsProps) => {
+  const { handleProducts, selectProducts } = useGlobalContext();
+  const contextProductQtd =
+    selectProducts.filter((item) => item.id === data.id)[0]?.totalItens || 1;
+  const [productQtd, setProductQtd] = useState(contextProductQtd);
+
+  const handleClick = (data: PageDataProducts) => {
+    data.totalItens = productQtd;
+
+    handleProducts(data);
+  };
+
   return (
     <S.Product key={data.id}>
       <S.ProductFirstContent>
@@ -26,10 +37,14 @@ export const Product = ({ data }: ProductsProps) => {
 
       <S.ProductSecondContent>
         <S.Value>
-          R$ <span>{data.value}</span>
+          <span>{formattedPrice.format(Number(data.value) * productQtd)}</span>
         </S.Value>
-        <InputNumber />
-        <Button styleType={"tertiary"} icon={"cart"} />
+        <InputNumber value={productQtd} onChange={setProductQtd} />
+        <Button
+          styleType={"tertiary"}
+          icon={"cart"}
+          onClick={() => handleClick(data)}
+        />
       </S.ProductSecondContent>
     </S.Product>
   );

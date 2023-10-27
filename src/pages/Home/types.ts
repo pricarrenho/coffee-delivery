@@ -26,6 +26,7 @@ export type PageDataProducts = {
   value: string;
   image: PageDataImage;
   tags: PageDataProductsTag[];
+  totalItens: number;
 };
 
 export type PageDataProductsTag = {
