@@ -1,9 +1,5 @@
+import { InputNumberProps } from "./types";
 import * as S from "./styles";
-
-type InputNumberProps = {
-  value: number;
-  onChange: (value: number) => void;
-};
 
 export const InputNumber = ({ value, onChange }: InputNumberProps) => {
   const handleDecrementProduct = () => {

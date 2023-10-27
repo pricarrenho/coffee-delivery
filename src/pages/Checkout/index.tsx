@@ -3,14 +3,49 @@ import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 import { CurrencyDollar, MapPinLine } from "phosphor-react";
 import { Button } from "../../components/Button";
-import { Link } from "react-router-dom";
 import { Select } from "../../components/Select";
 import { useGlobalContext } from "../../context/GlobalContext";
 import * as S from "./styles";
 import { CoffeeItem } from "./CoffeeItem";
+import { formattedPrice } from "../../utils/formatter";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function Checkout() {
-  const { selectProducts } = useGlobalContext();
+  const { selectProducts, handleAddress } = useGlobalContext();
+  const navigate = useNavigate();
+
+  const [street, setStreet] = useState("");
+  const [streetNumber, setStreetNumber] = useState("");
+  const [neighborhood, setNeighborhood] = useState("");
+  const [city, setCity] = useState("");
+  const [uf, setUf] = useState("");
+
+  const valueOfProduct = selectProducts.map((item) =>
+    Number((item.totalItens * Number(item.value)).toFixed(2))
+  );
+
+  let totalValueOfProducts = 0;
+
+  for (let index = 0; index < valueOfProduct.length; index++) {
+    totalValueOfProducts += valueOfProduct[index];
+  }
+
+  const totalValue = totalValueOfProducts + 3.5;
+
+  const handleConfirmation = () => {
+    const addressInformation = {
+      street: street,
+      streetNumber: streetNumber,
+      neighborhood: neighborhood,
+      city: city,
+      uf: uf,
+    };
+
+    handleAddress(addressInformation);
+
+    navigate("/success");
+  };
 
   return (
     <Container>
@@ -35,20 +70,40 @@ export function Checkout() {
             </S.AddressAndPaymentContent>
 
             <S.InputWidth>
-              <Input name="cep" placeholder="CEP" />
+              {/* <Input name="cep" placeholder="CEP" /> */}
             </S.InputWidth>
 
-            <Input name="street" placeholder="Rua" />
+            <Input
+              name="street"
+              placeholder="Rua"
+              value={street}
+              onChange={setStreet}
+            />
 
             <S.ContentForm>
-              <Input name="number" placeholder="Número" />
-              <Input name="complement" placeholder="Complemento" />
+              <Input
+                name="number"
+                placeholder="Número"
+                value={streetNumber}
+                onChange={setStreetNumber}
+              />
+              {/* <Input name="complement" placeholder="Complemento" />  */}
             </S.ContentForm>
 
             <S.ContentForm>
-              <Input name="neighborhood" placeholder="Bairro" />
-              <Input name="city" placeholder="Cidade" />
-              <Input name="uf" placeholder="UF" />
+              <Input
+                name="neighborhood"
+                placeholder="Bairro"
+                value={neighborhood}
+                onChange={setNeighborhood}
+              />
+              <Input
+                name="city"
+                placeholder="Cidade"
+                value={city}
+                onChange={setCity}
+              />
+              <Input name="uf" placeholder="UF" value={uf} onChange={setUf} />
             </S.ContentForm>
           </S.AddressAndPaymentWrapper>
 
@@ -84,7 +139,9 @@ export function Checkout() {
             <S.CheckoutValueWrapper>
               <S.CheckoutValueContent>
                 <S.CheckoutValueName>Total de itens</S.CheckoutValueName>
-                <S.CheckoutValueName>R$ 29,70</S.CheckoutValueName>
+                <S.CheckoutValueName>
+                  {formattedPrice.format(totalValueOfProducts)}
+                </S.CheckoutValueName>
               </S.CheckoutValueContent>
 
               <S.CheckoutValueContent>
@@ -94,13 +151,15 @@ export function Checkout() {
 
               <S.CheckoutValueContent>
                 <S.CheckoutValueTotal>Total</S.CheckoutValueTotal>
-                <S.CheckoutValueTotal>R$33,20</S.CheckoutValueTotal>
+                <S.CheckoutValueTotal>
+                  {formattedPrice.format(totalValue)}
+                </S.CheckoutValueTotal>
               </S.CheckoutValueContent>
             </S.CheckoutValueWrapper>
 
-            <Link to={"/success"}>
-              <Button styleType="primary">confirmar pedido</Button>
-            </Link>
+            <Button styleType="primary" onClick={handleConfirmation}>
+              confirmar pedido
+            </Button>
           </S.CoffeeWrapper>
         </S.RightContent>
       </S.CheckoutWrapper>

@@ -7,5 +7,9 @@ export const Input = styled.input`
     border: 1px solid ${theme.colors.neutral[400]};
     background: ${theme.colors.neutral[300]};
     width: 100%;
+
+    &:focus {
+      outline-color: ${theme.colors.yellow[700]};
+    }
   `}
 `;

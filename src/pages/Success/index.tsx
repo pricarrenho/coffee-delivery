@@ -1,10 +1,13 @@
 import { Container } from "../../components/Container";
 import { Header } from "../../components/Header";
 import Illustration from "../../assets/Illustration.png";
-import * as S from "./styles";
 import { CurrencyDollar, MapPin, Timer } from "phosphor-react";
+import { useGlobalContext } from "../../context/GlobalContext";
+import * as S from "./styles";
 
 export function Success() {
+  const { address } = useGlobalContext();
+
   return (
     <Container>
       <Header />
@@ -26,11 +29,14 @@ export function Success() {
 
               <div>
                 <S.LeftContentDescription>
-                  Entrega em <span>Rua João Daniel Martinelli, 102</span>
+                  Entrega em{" "}
+                  <span>
+                    {address.street}, {address.streetNumber}
+                  </span>
                 </S.LeftContentDescription>
 
                 <S.LeftContentDescription>
-                  Farrapos - Porto Alegre, RS
+                  {address.neighborhood} - {address.city}, {address.uf}
                 </S.LeftContentDescription>
               </div>
             </S.LeftContent>
