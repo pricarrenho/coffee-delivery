@@ -4,9 +4,15 @@ import { IconContainerType } from "./types";
 export const Wrapper = styled.div`
   ${() => css`
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 48px;
-    padding: 94px 0px;
+    padding: 24px 0px;
+
+    @media (min-width: 800px) {
+      flex-direction: row;
+      padding: 48px 0px;
+    }
   `}
 `;
 
@@ -30,25 +36,37 @@ export const Title = styled.h1`
   ${({ theme }) => css`
     color: ${theme.colors.neutral[900]};
     font-family: "Baloo 2";
-    font-size: 48px;
+    font-size: 40px;
     font-style: normal;
     font-weight: 800;
+
+    @media (min-width: 800px) {
+      font-size: 48px;
+    }
   `}
 `;
 
 export const Subtitle = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.neutral[800]};
-    font-size: 20px;
+    font-size: 16px;
+
+    @media (min-width: 800px) {
+      font-size: 20px;
+    }
   `}
 `;
 
 export const ServicesContentContainer = styled.div`
   ${() => css`
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr;
     column-gap: 36px;
     row-gap: 20px;
+
+    @media (min-width: 800px) {
+      grid-template-columns: auto 1fr;
+    }
   `}
 `;
 
@@ -102,5 +120,13 @@ export const ServiceDescription = styled.p`
 `;
 
 export const Image = styled.img`
-  ${() => css``}
+  ${() => css`
+    width: 350px;
+    height: 300px;
+
+    @media (min-width: 800px) {
+      width: 476px;
+      height: 360px;
+    }
+  `}
 `;

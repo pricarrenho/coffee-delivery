@@ -5,6 +5,11 @@ export const SuccessWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
+  padding: 24px 0px;
+
+  @media (min-width: 800px) {
+    padding: 48px 0px;
+  }
 `;
 
 export const TitleWrapper = styled.div``;
@@ -12,24 +17,36 @@ export const TitleWrapper = styled.div``;
 export const Title = styled.h2`
   ${({ theme }) => css`
     color: ${theme.colors.yellow[700]};
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 800;
-    line-height: 130%;
+
+    @media (min-width: 800px) {
+      font-size: 32px;
+    }
   `}
 `;
 
 export const Subtitle = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.neutral[800]};
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 400;
-    line-height: 130%;
+
+    @media (min-width: 800px) {
+      font-size: 20px;
+    }
   `}
 `;
 
 export const ContentWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 24px;
+
+  @media (min-width: 800px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `;
 
 export const LeftContentWrapper = styled.div`
@@ -40,7 +57,11 @@ export const LeftContentWrapper = styled.div`
     padding: 40px;
     border-radius: 6px 36px;
     border: 1px solid ${theme.colors.yellow[500]};
-    width: 526px;
+    width: 100%;
+
+    @media (min-width: 800px) {
+      width: 526px;
+    }
   `}
 `;
 
@@ -97,6 +118,11 @@ export const LeftContentDescription = styled.div`
 `;
 
 export const Image = styled.img`
-  width: 492px;
-  height: 293px;
+  width: 350px;
+  height: 250px;
+
+  @media (min-width: 800px) {
+    width: 492px;
+    height: 293px;
+  }
 `;

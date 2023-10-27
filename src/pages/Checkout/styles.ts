@@ -2,8 +2,14 @@ import { css, styled } from "styled-components";
 
 export const CheckoutWrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 32px;
+  padding: 24px 0px;
+
+  @media (min-width: 800px) {
+    grid-template-columns: 1fr 1fr;
+    padding: 48px 0px;
+  }
 `;
 
 export const LeftContent = styled.div`
@@ -62,17 +68,23 @@ export const AddressAndPaymentDescription = styled.p`
 export const ContentForm = styled.div`
   ${() => css`
     display: flex;
+    flex-direction: column;
     gap: 12px;
-  `}
-`;
 
-export const InputWidth = styled.div`
-  max-width: 200px;
+    @media (min-width: 800px) {
+      flex-direction: row;
+    }
+  `}
 `;
 
 export const OptionsPayment = styled.div`
   display: flex;
+  flex-direction: column;
   gap: 12px;
+
+  @media (min-width: 800px) {
+    flex-direction: row;
+  }
 `;
 
 export const RightContent = styled.div`
@@ -86,9 +98,9 @@ export const RightContent = styled.div`
 export const CoffeeWrapper = styled.div`
   ${({ theme }) => css`
     display: flex;
+    flex-direction: column;
     padding: 40px;
     gap: 48px;
-    flex-direction: column;
     border-radius: 6px;
     background: ${theme.colors.neutral[200]};
   `}
@@ -97,7 +109,13 @@ export const CoffeeWrapper = styled.div`
 export const CheckoutCoffeeWrapper = styled.div`
   ${() => css`
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 24px;
+
+    @media (min-width: 800px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
   `}
 `;
 
@@ -135,10 +153,13 @@ export const CheckoutCoffeeButtons = styled.div`
 export const CheckoutCoffeeValue = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.neutral[700]};
-    text-align: right;
+    text-align: left;
     font-size: 16px;
     font-weight: 700;
-    line-height: 130%;
+
+    @media (min-width: 800px) {
+      text-align: right;
+    }
   `}
 `;
 
@@ -160,19 +181,25 @@ export const CheckoutValueContent = styled.div`
 export const CheckoutValueName = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.neutral[700]};
-    text-align: right;
+    text-align: left;
     font-size: 14px;
     font-weight: 400;
-    line-height: 130%;
+
+    @media (min-width: 800px) {
+      text-align: right;
+    }
   `}
 `;
 
 export const CheckoutValueTotal = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.neutral[800]};
-    text-align: right;
+    text-align: left;
     font-size: 20px;
     font-weight: 700;
-    line-height: 130%;
+
+    @media (min-width: 800px) {
+      text-align: right;
+    }
   `}
 `;

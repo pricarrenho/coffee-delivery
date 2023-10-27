@@ -13,17 +13,24 @@ export const Wrapper = styled.div`
 export const Title = styled.h2`
   ${({ theme }) => css`
     color: ${theme.colors.neutral[800]};
-    font-family: "Baloo 2";
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 800;
+
+    @media (min-width: 800px) {
+      font-size: 32px;
+    }
   `}
 `;
 
 export const Content = styled.div`
-  ${() =>
-    css`
-      display: grid;
+  ${() => css`
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+
+    @media (min-width: 800px) {
       grid-template-columns: repeat(4, 1fr);
       gap: 32px;
-    `}
+    }
+  `}
 `;

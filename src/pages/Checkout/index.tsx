@@ -20,6 +20,7 @@ export function Checkout() {
   const [neighborhood, setNeighborhood] = useState("");
   const [city, setCity] = useState("");
   const [uf, setUf] = useState("");
+  const [cep, setCep] = useState("");
 
   const valueOfProduct = selectProducts.map((item) =>
     Number((item.totalItens * Number(item.value)).toFixed(2))
@@ -69,9 +70,7 @@ export function Checkout() {
               </div>
             </S.AddressAndPaymentContent>
 
-            <S.InputWidth>
-              {/* <Input name="cep" placeholder="CEP" /> */}
-            </S.InputWidth>
+            <Input name="cep" placeholder="CEP" value={cep} onChange={setCep} />
 
             <Input
               name="street"
