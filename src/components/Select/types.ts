@@ -1,3 +1,7 @@
+import { ButtonHTMLAttributes } from "react";
+
+type ButtonType = ButtonHTMLAttributes<HTMLButtonElement>;
+
 export type SelectProps = {
-  children: string;
-};
+  option: string;
+} & ButtonType;

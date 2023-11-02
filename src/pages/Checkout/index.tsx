@@ -5,14 +5,14 @@ import { CurrencyDollar, MapPinLine } from "phosphor-react";
 import { Button } from "../../components/Button";
 import { Select } from "../../components/Select";
 import { useGlobalContext } from "../../context/GlobalContext";
-import * as S from "./styles";
 import { CoffeeItem } from "./CoffeeItem";
 import { formattedPrice } from "../../utils/formatter";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import * as S from "./styles";
 
 export function Checkout() {
-  const { selectProducts, handleAddress } = useGlobalContext();
+  const { selectProducts, handleCheckoutForm } = useGlobalContext();
   const navigate = useNavigate();
 
   const [street, setStreet] = useState("");
@@ -21,6 +21,11 @@ export function Checkout() {
   const [city, setCity] = useState("");
   const [uf, setUf] = useState("");
   const [cep, setCep] = useState("");
+  const [payment, setPayment] = useState("");
+
+  const [isDisabled, setIsDisabled] = useState(true);
+
+  const paymentOptions = ["Crédito", "Débito", "Dinheiro"];
 
   const valueOfProduct = selectProducts.map((item) =>
     Number((item.totalItens * Number(item.value)).toFixed(2))
@@ -34,18 +39,37 @@ export function Checkout() {
 
   const totalValue = totalValueOfProducts + 3.5;
 
-  const handleConfirmation = () => {
-    const addressInformation = {
-      street: street,
-      streetNumber: streetNumber,
-      neighborhood: neighborhood,
-      city: city,
-      uf: uf,
-    };
+  const checkoutInformation = {
+    street: street,
+    streetNumber: streetNumber,
+    neighborhood: neighborhood,
+    city: city,
+    uf: uf,
+    payment: payment,
+  };
 
-    handleAddress(addressInformation);
+  const checkInformation =
+    checkoutInformation.street !== "" &&
+    checkoutInformation.streetNumber !== "" &&
+    checkoutInformation.neighborhood !== "" &&
+    checkoutInformation.city !== "" &&
+    checkoutInformation.uf !== "" &&
+    checkoutInformation.payment !== "";
+
+  useEffect(() => {
+    if (checkInformation) {
+      setIsDisabled(false);
+    }
+  }, [checkInformation]);
+
+  const handleConfirmation = () => {
+    handleCheckoutForm(checkoutInformation);
 
     navigate("/success");
+  };
+
+  const handlePaymentOptions = (value: string) => {
+    setPayment(value);
   };
 
   return (
@@ -70,26 +94,32 @@ export function Checkout() {
               </div>
             </S.AddressAndPaymentContent>
 
-            <Input name="cep" placeholder="CEP" value={cep} onChange={setCep} />
+            <S.ContentFormCEP>
+              <Input
+                name="cep"
+                placeholder="CEP"
+                value={cep}
+                onChange={setCep}
+              />
+            </S.ContentFormCEP>
 
-            <Input
-              name="street"
-              placeholder="Rua"
-              value={street}
-              onChange={setStreet}
-            />
+            <S.ContentFormStreet>
+              <Input
+                name="street"
+                placeholder="Rua"
+                value={street}
+                onChange={setStreet}
+              />
 
-            <S.ContentForm>
               <Input
                 name="number"
                 placeholder="Número"
                 value={streetNumber}
                 onChange={setStreetNumber}
               />
-              {/* <Input name="complement" placeholder="Complemento" />  */}
-            </S.ContentForm>
+            </S.ContentFormStreet>
 
-            <S.ContentForm>
+            <S.ContentFormCity>
               <Input
                 name="neighborhood"
                 placeholder="Bairro"
@@ -103,7 +133,7 @@ export function Checkout() {
                 onChange={setCity}
               />
               <Input name="uf" placeholder="UF" value={uf} onChange={setUf} />
-            </S.ContentForm>
+            </S.ContentFormCity>
           </S.AddressAndPaymentWrapper>
 
           <S.AddressAndPaymentWrapper>
@@ -120,9 +150,13 @@ export function Checkout() {
             </S.AddressAndPaymentContent>
 
             <S.OptionsPayment>
-              <Select children="Cartão de crédito" />
-              <Select children="Cartão de débito" />
-              <Select children="Dinheiro" />
+              {paymentOptions.map((item) => (
+                <Select
+                  option={item}
+                  key={item}
+                  onClick={() => handlePaymentOptions(item)}
+                />
+              ))}
             </S.OptionsPayment>
           </S.AddressAndPaymentWrapper>
         </S.LeftContent>
@@ -138,14 +172,14 @@ export function Checkout() {
             <S.CheckoutValueWrapper>
               <S.CheckoutValueContent>
                 <S.CheckoutValueName>Total de itens</S.CheckoutValueName>
-                <S.CheckoutValueName>
+                <S.CheckoutValuePrice>
                   {formattedPrice.format(totalValueOfProducts)}
-                </S.CheckoutValueName>
+                </S.CheckoutValuePrice>
               </S.CheckoutValueContent>
 
               <S.CheckoutValueContent>
                 <S.CheckoutValueName>Entrega</S.CheckoutValueName>
-                <S.CheckoutValueName>R$3,50</S.CheckoutValueName>
+                <S.CheckoutValuePrice>R$3,50</S.CheckoutValuePrice>
               </S.CheckoutValueContent>
 
               <S.CheckoutValueContent>
@@ -156,7 +190,11 @@ export function Checkout() {
               </S.CheckoutValueContent>
             </S.CheckoutValueWrapper>
 
-            <Button styleType="primary" onClick={handleConfirmation}>
+            <Button
+              styleType="primary"
+              onClick={handleConfirmation}
+              disabled={isDisabled}
+            >
               confirmar pedido
             </Button>
           </S.CoffeeWrapper>

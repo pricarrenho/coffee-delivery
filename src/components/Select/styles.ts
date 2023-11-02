@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const SelectWrapper = styled.div`
+export const SelectWrapper = styled.button`
   ${({ theme }) => css`
     background-color: ${theme.colors.neutral[400]};
     display: flex;
@@ -8,6 +8,7 @@ export const SelectWrapper = styled.div`
     align-items: center;
     gap: 12px;
     width: 178.667px;
+    border: none;
     cursor: pointer;
 
     &:hover {

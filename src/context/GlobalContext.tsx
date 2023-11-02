@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import {
-  AddressProps,
+  CheckoutFormProps,
   GlobalContextType,
   GlobalProviderProps,
   ProductsData,
@@ -12,12 +12,13 @@ export const GlobalContext = createContext<GlobalContextType>(
 
 export const GlobalProvider = ({ children }: GlobalProviderProps) => {
   const [selectProducts, setSelectProducts] = useState<ProductsData[]>([]);
-  const [address, setAddress] = useState<AddressProps>({
+  const [checkoutForm, setCheckoutForm] = useState<CheckoutFormProps>({
     street: "",
     streetNumber: "",
     neighborhood: "",
     city: "",
     uf: "",
+    payment: "",
   });
 
   const handleProducts = (value: ProductsData) => {
@@ -34,13 +35,18 @@ export const GlobalProvider = ({ children }: GlobalProviderProps) => {
     setSelectProducts(newObj);
   };
 
-  const handleAddress = (value: AddressProps) => {
-    setAddress(value);
+  const handleCheckoutForm = (value: CheckoutFormProps) => {
+    setCheckoutForm(value);
   };
 
   return (
     <GlobalContext.Provider
-      value={{ selectProducts, handleProducts, address, handleAddress }}
+      value={{
+        selectProducts,
+        handleProducts,
+        checkoutForm,
+        handleCheckoutForm,
+      }}
     >
       {children}
     </GlobalContext.Provider>

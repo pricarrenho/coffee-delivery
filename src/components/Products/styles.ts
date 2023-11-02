@@ -29,7 +29,7 @@ export const Content = styled.div`
     gap: 48px;
 
     @media (min-width: 800px) {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 32px;
     }
   `}

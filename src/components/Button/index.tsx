@@ -6,6 +6,7 @@ export const Button = ({
   children,
   styleType,
   icon,
+
   ...props
 }: ButtonProps) => {
   const icons = {

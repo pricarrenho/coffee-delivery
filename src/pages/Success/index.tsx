@@ -6,7 +6,7 @@ import { useGlobalContext } from "../../context/GlobalContext";
 import * as S from "./styles";
 
 export function Success() {
-  const { address } = useGlobalContext();
+  const { checkoutForm } = useGlobalContext();
 
   return (
     <Container>
@@ -14,7 +14,7 @@ export function Success() {
 
       <S.SuccessWrapper>
         <S.TitleWrapper>
-          <S.Title>Uhu! Pedido confirmado</S.Title>
+          <S.Title>Oba! Pedido confirmado</S.Title>
           <S.Subtitle>
             Agora é só aguardar que logo o café chegará até você
           </S.Subtitle>
@@ -31,12 +31,13 @@ export function Success() {
                 <S.LeftContentDescription>
                   Entrega em{" "}
                   <span>
-                    {address.street}, {address.streetNumber}
+                    {checkoutForm.street}, {checkoutForm.streetNumber}
                   </span>
                 </S.LeftContentDescription>
 
                 <S.LeftContentDescription>
-                  {address.neighborhood} - {address.city}, {address.uf}
+                  {checkoutForm.neighborhood} - {checkoutForm.city},{" "}
+                  {checkoutForm.uf}
                 </S.LeftContentDescription>
               </div>
             </S.LeftContent>
@@ -66,7 +67,7 @@ export function Success() {
                   Pagamento na entrega
                 </S.LeftContentDescription>
                 <S.LeftContentDescription>
-                  <span>Cartão de Crédito</span>
+                  <span>{checkoutForm.payment}</span>
                 </S.LeftContentDescription>
               </div>
             </S.LeftContent>

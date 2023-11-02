@@ -15,6 +15,11 @@ const WrapperModifier = {
     &:hover {
       background: ${theme.colors.yellow[700]};
     }
+
+    &:disabled {
+      background: ${theme.colors.neutral[500]};
+      cursor: not-allowed;
+    }
   `,
 
   secondary: (theme: DefaultTheme) => css`

@@ -65,14 +65,36 @@ export const AddressAndPaymentDescription = styled.p`
   `}
 `;
 
-export const ContentForm = styled.div`
+export const ContentFormCEP = styled.div`
   ${() => css`
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    width: 100%;
 
     @media (min-width: 800px) {
-      flex-direction: row;
+      width: 150px;
+    }
+  `}
+`;
+
+export const ContentFormStreet = styled.div`
+  ${() => css`
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+
+    @media (min-width: 800px) {
+      grid-template-columns: auto 120px;
+    }
+  `}
+`;
+
+export const ContentFormCity = styled.div`
+  ${() => css`
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+
+    @media (min-width: 800px) {
+      grid-template-columns: 280px 180px 50px;
     }
   `}
 `;
@@ -156,6 +178,7 @@ export const CheckoutCoffeeValue = styled.p`
     text-align: left;
     font-size: 16px;
     font-weight: 700;
+    width: 95px;
 
     @media (min-width: 800px) {
       text-align: right;
@@ -181,25 +204,26 @@ export const CheckoutValueContent = styled.div`
 export const CheckoutValueName = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.neutral[700]};
-    text-align: left;
     font-size: 14px;
     font-weight: 400;
+  `}
+`;
 
-    @media (min-width: 800px) {
-      text-align: right;
-    }
+export const CheckoutValuePrice = styled.p`
+  ${({ theme }) => css`
+    color: ${theme.colors.neutral[700]};
+    text-align: right;
+    font-size: 14px;
+    font-weight: 400;
+    width: 95px;
   `}
 `;
 
 export const CheckoutValueTotal = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.neutral[800]};
-    text-align: left;
+    text-align: right;
     font-size: 20px;
     font-weight: 700;
-
-    @media (min-width: 800px) {
-      text-align: right;
-    }
   `}
 `;
