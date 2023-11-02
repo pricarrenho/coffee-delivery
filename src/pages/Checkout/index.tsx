@@ -153,6 +153,7 @@ export function Checkout() {
               {paymentOptions.map((item) => (
                 <Select
                   option={item}
+                  select={payment}
                   key={item}
                   onClick={() => handlePaymentOptions(item)}
                 />

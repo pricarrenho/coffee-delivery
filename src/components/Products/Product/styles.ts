@@ -52,7 +52,7 @@ export const Tag = styled.div`
       background: ${theme.colors.yellow[300]};
       border-radius: 100px;
       color: ${theme.colors.yellow[700]};
-      font-size: 10px;
+      font-size: ${theme.font.sizes.ms};
       font-weight: 700;
       text-transform: uppercase;
     }
@@ -62,7 +62,7 @@ export const Tag = styled.div`
 export const Subtitle = styled.h3`
   ${({ theme }) =>
     css`
-      font-size: 20px;
+      font-size: ${theme.font.sizes.l};
       color: ${theme.colors.neutral[800]};
     `}
 `;
@@ -70,7 +70,7 @@ export const Subtitle = styled.h3`
 export const Description = styled.p`
   ${({ theme }) => css`
     text-align: center;
-    font-size: 14px;
+    font-size: ${theme.font.sizes.m};
     color: ${theme.colors.neutral[600]};
   `}
 `;
@@ -78,12 +78,12 @@ export const Description = styled.p`
 export const Value = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.neutral[700]};
-    font-size: 14px;
+    font-size: ${theme.font.sizes.m};
     width: 111px;
 
     span {
       font-family: Baloo 2;
-      font-size: 24px;
+      font-size: ${theme.font.sizes.xl};
       font-weight: 800;
     }
   `}

@@ -36,12 +36,12 @@ export const Title = styled.h1`
   ${({ theme }) => css`
     color: ${theme.colors.neutral[900]};
     font-family: "Baloo 2";
-    font-size: 40px;
+    font-size: ${theme.font.sizes.xxl};
     font-style: normal;
     font-weight: 800;
 
     @media (min-width: 800px) {
-      font-size: 48px;
+      font-size: ${theme.font.sizes.xxxl};
     }
   `}
 `;
@@ -49,10 +49,10 @@ export const Title = styled.h1`
 export const Subtitle = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.neutral[800]};
-    font-size: 16px;
+    font-size: ${theme.font.sizes.ml};
 
     @media (min-width: 800px) {
-      font-size: 20px;
+      font-size: ${theme.font.sizes.l};
     }
   `}
 `;
@@ -114,7 +114,7 @@ export const IconContainer = styled.div<IconProps>`
 
 export const ServiceDescription = styled.p`
   ${({ theme }) => css`
-    font-size: 16px;
+    font-size: ${theme.font.sizes.ml};
     color: ${theme.colors.neutral[700]};
   `}
 `;

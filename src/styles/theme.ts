@@ -27,15 +27,14 @@ const colors = {
 const font = {
   family: "Roboto",
   sizes: {
-    xxs: "0.625rem", //10px
-    xs: "0.75rem", //12px
-    s: "0.875rem", //14px
-    m: "1rem", //16px
-    xm: "1.125rem", //18px
-    l: "1.25rem", //20px
-    lg: "1.5rem", //24px
-    xlg: "2rem", // 32px
-    g: "3rem", //48px
+    ms: "1.2rem",
+    m: "1.4rem",
+    ml: "1.6rem",
+    lm: "1.8rem",
+    l: "2rem",
+    xl: "2.4rem",
+    xxl: "3.2rem",
+    xxxl: "4.8rem",
   },
 };
 

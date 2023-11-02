@@ -13,11 +13,11 @@ export const Wrapper = styled.div`
 export const Title = styled.h2`
   ${({ theme }) => css`
     color: ${theme.colors.neutral[800]};
-    font-size: 28px;
+    font-size: ${theme.font.sizes.xl};
     font-weight: 800;
 
     @media (min-width: 800px) {
-      font-size: 32px;
+      font-size: ${theme.font.sizes.xxl};
     }
   `}
 `;

@@ -17,11 +17,11 @@ export const TitleWrapper = styled.div``;
 export const Title = styled.h2`
   ${({ theme }) => css`
     color: ${theme.colors.yellow[700]};
-    font-size: 24px;
+    font-size: ${theme.font.sizes.xl};
     font-weight: 800;
 
     @media (min-width: 800px) {
-      font-size: 32px;
+      font-size: ${theme.font.sizes.xxl};
     }
   `}
 `;
@@ -29,11 +29,11 @@ export const Title = styled.h2`
 export const Subtitle = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.neutral[800]};
-    font-size: 16px;
+    font-size: ${theme.font.sizes.ml};
     font-weight: 400;
 
     @media (min-width: 800px) {
-      font-size: 20px;
+      font-size: ${theme.font.sizes.l};
     }
   `}
 `;
@@ -106,7 +106,7 @@ export const Icon = styled.div<IconProps>`
 
 export const LeftContentDescription = styled.div`
   ${({ theme }) => css`
-    font-size: 16px;
+    font-size: ${theme.font.sizes.ml};
     font-weight: 400;
     line-height: 130%;
     color: ${theme.colors.neutral[700]};

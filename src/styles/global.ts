@@ -2,25 +2,23 @@ import { createGlobalStyle, css } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   ${({ theme }) => css`
-    * {
-      box-sizing: border-box;
-    }
-
-    html,
-    body,
-    #__next {
-      background: ${theme.colors.background};
-      font-family: ${theme.font.family};
+    html {
+      font-size: 62.5%;
     }
 
     body,
     h1,
     h2,
-    h3,
-    p {
+    h3 {
       margin: 0;
       padding: 0;
-      line-height: 130%;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      background: ${theme.colors.background};
+      font-family: ${theme.font.family};
     }
   `}
 `;

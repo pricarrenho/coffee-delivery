@@ -35,7 +35,7 @@ export const ItensWrapper = styled.div`
 export const ItensNumber = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.white};
-    font-size: 12px;
+    font-size: ${theme.font.sizes.ms};
     font-weight: 700;
   `}
 `;

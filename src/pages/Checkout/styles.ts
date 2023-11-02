@@ -22,7 +22,7 @@ export const LeftContent = styled.div`
 
 export const Title = styled.h2`
   ${({ theme }) => css`
-    font-size: 18px;
+    font-size: ${theme.font.sizes.lm};
     font-weight: 700;
     color: ${theme.colors.neutral[800]};
   `}
@@ -50,7 +50,7 @@ export const AddressAndPaymentContent = styled.div`
 export const AddressAndPaymentTitle = styled.h3`
   ${({ theme }) => css`
     color: ${theme.colors.neutral[800]};
-    font-size: 16px;
+    font-size: ${theme.font.sizes.ml};
     font-weight: 400;
     line-height: 130%;
   `}
@@ -59,7 +59,7 @@ export const AddressAndPaymentTitle = styled.h3`
 export const AddressAndPaymentDescription = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.neutral[700]};
-    font-size: 14px;
+    font-size: ${theme.font.sizes.m};
     font-weight: 400;
     line-height: 130%;
   `}
@@ -158,7 +158,7 @@ export const Image = styled.img`
 export const CheckoutCoffeeName = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.neutral[800]};
-    font-size: 16px;
+    font-size: ${theme.font.sizes.ml};
     font-weight: 400;
     line-height: 130%;
   `}
@@ -176,7 +176,7 @@ export const CheckoutCoffeeValue = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.neutral[700]};
     text-align: left;
-    font-size: 16px;
+    font-size: ${theme.font.sizes.ml};
     font-weight: 700;
     width: 95px;
 
@@ -204,7 +204,7 @@ export const CheckoutValueContent = styled.div`
 export const CheckoutValueName = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.neutral[700]};
-    font-size: 14px;
+    font-size: ${theme.font.sizes.m};
     font-weight: 400;
   `}
 `;
@@ -213,7 +213,7 @@ export const CheckoutValuePrice = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.neutral[700]};
     text-align: right;
-    font-size: 14px;
+    font-size: ${theme.font.sizes.m};
     font-weight: 400;
     width: 95px;
   `}
@@ -223,7 +223,7 @@ export const CheckoutValueTotal = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.neutral[800]};
     text-align: right;
-    font-size: 20px;
+    font-size: ${theme.font.sizes.l};
     font-weight: 700;
   `}
 `;
