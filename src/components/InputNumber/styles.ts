@@ -17,6 +17,7 @@ export const InputNumberBtn = styled.button`
     cursor: pointer;
     background-color: ${theme.colors.neutral[400]};
     color: ${theme.colors.purple[500]};
+    outline: none;
   `}
 `;
 
@@ -26,6 +27,7 @@ export const InputNumber = styled.input`
     background-color: ${theme.colors.neutral[400]};
     width: 24px;
     text-align: center;
+    outline: none;
 
     &::-webkit-outer-spin-button {
       -webkit-appearance: none;

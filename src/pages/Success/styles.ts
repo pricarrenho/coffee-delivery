@@ -57,7 +57,6 @@ export const LeftContentWrapper = styled.div`
     padding: 40px;
     border-radius: 6px 36px;
     border: 1px solid ${theme.colors.yellow[500]};
-    width: 100%;
 
     @media (min-width: 800px) {
       width: 526px;
