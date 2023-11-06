@@ -7,7 +7,7 @@ export const useHome = () => {
 
   useEffect(() => {
     getHomePage().then((result) => {
-      setPageData(result);
+      setPageData(result as PageData);
     });
   }, []);
 
