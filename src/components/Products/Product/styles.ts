@@ -13,13 +13,22 @@ export const Product = styled.div`
   `}
 `;
 
-export const ProductFirstContent = styled.div`
+export const ProductFirstContentWrapper = styled.div`
   ${() => css`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 16px;
+  `}
+`;
+
+export const ProductFirstContent = styled.div`
+  ${() => css`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   `}
 `;
 
@@ -70,7 +79,7 @@ export const Subtitle = styled.h3`
 export const Description = styled.p`
   ${({ theme }) => css`
     text-align: center;
-    font-size: ${theme.font.sizes.m};
+    font-size: ${theme.font.sizes.ml};
     color: ${theme.colors.neutral[600]};
   `}
 `;
@@ -78,7 +87,7 @@ export const Description = styled.p`
 export const Value = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.neutral[700]};
-    font-size: ${theme.font.sizes.m};
+    font-size: ${theme.font.sizes.ml};
     width: 116px;
 
     span {

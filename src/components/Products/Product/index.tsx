@@ -21,19 +21,23 @@ export const Product = ({ data }: ProductsProps) => {
 
   return (
     <S.Product key={data.id}>
-      <S.ProductFirstContent>
-        <S.Image src={data.image.url} alt="" />
+      <S.ProductFirstContentWrapper>
+        <S.ProductFirstContent>
+          <S.Image src={data.image.url} alt="" />
 
-        <S.Tag>
-          {data.tags.map((tag) => (
-            <p key={tag.title}>{tag.title}</p>
-          ))}
-        </S.Tag>
+          <S.Tag>
+            {data.tags.map((tag) => (
+              <p key={tag.title}>{tag.title}</p>
+            ))}
+          </S.Tag>
+        </S.ProductFirstContent>
 
-        <S.Subtitle>{data.title}</S.Subtitle>
+        <S.ProductFirstContent>
+          <S.Subtitle>{data.title}</S.Subtitle>
 
-        <S.Description>{data.description}</S.Description>
-      </S.ProductFirstContent>
+          <S.Description>{data.description}</S.Description>
+        </S.ProductFirstContent>
+      </S.ProductFirstContentWrapper>
 
       <S.ProductSecondContent>
         <S.Value>

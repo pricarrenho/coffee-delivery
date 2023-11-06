@@ -59,7 +59,7 @@ export const AddressAndPaymentTitle = styled.h3`
 export const AddressAndPaymentDescription = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.neutral[700]};
-    font-size: ${theme.font.sizes.m};
+    font-size: ${theme.font.sizes.ml};
     font-weight: 400;
     line-height: 130%;
   `}
@@ -204,7 +204,7 @@ export const CheckoutValueContent = styled.div`
 export const CheckoutValueName = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.neutral[700]};
-    font-size: ${theme.font.sizes.m};
+    font-size: ${theme.font.sizes.ml};
     font-weight: 400;
   `}
 `;
@@ -213,7 +213,7 @@ export const CheckoutValuePrice = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.neutral[700]};
     text-align: right;
-    font-size: ${theme.font.sizes.m};
+    font-size: ${theme.font.sizes.ml};
     font-weight: 400;
     width: 95px;
   `}

@@ -20,7 +20,11 @@ export const LeftContent = styled.div`
   ${() => css`
     display: flex;
     flex-direction: column;
-    gap: 66px;
+    gap: 32px;
+
+    @media (min-width: 800px) {
+      gap: 66px;
+    }
   `}
 `;
 
@@ -28,7 +32,11 @@ export const TitleContent = styled.div`
   ${() => css`
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 0px;
+
+    @media (min-width: 800px) {
+      gap: 16px;
+    }
   `}
 `;
 
@@ -62,10 +70,11 @@ export const ServicesContentContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     column-gap: 36px;
-    row-gap: 20px;
+    row-gap: 0px;
 
     @media (min-width: 800px) {
       grid-template-columns: auto 1fr;
+      row-gap: 20px;
     }
   `}
 `;
@@ -110,6 +119,11 @@ export const IconContainer = styled.div<IconProps>`
 
     ${$styleType && IconModifier[$styleType](theme)};
   `}
+`;
+
+export const IconImage = styled.img`
+  width: 20px;
+  height: 20px;
 `;
 
 export const ServiceDescription = styled.p`
