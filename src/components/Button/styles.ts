@@ -47,7 +47,7 @@ const WrapperModifier = {
 export const WrapperButton = styled.button<WrapperProps>`
   ${({ theme, $styleType }) => css`
     cursor: pointer;
-    display: inline-flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 6px;

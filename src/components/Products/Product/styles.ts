@@ -28,7 +28,7 @@ export const ProductSecondContent = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 8px;
+    gap: 16px;
   `}
 `;
 
@@ -79,11 +79,10 @@ export const Value = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.neutral[700]};
     font-size: ${theme.font.sizes.m};
-    width: 111px;
+    width: 116px;
 
     span {
-      font-family: Baloo 2;
-      font-size: ${theme.font.sizes.xl};
+      font-size: ${theme.font.sizes.l};
       font-weight: 800;
     }
   `}

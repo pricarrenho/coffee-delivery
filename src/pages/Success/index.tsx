@@ -37,7 +37,7 @@ export function Success() {
 
                 <S.LeftContentDescription>
                   {checkoutForm.neighborhood} - {checkoutForm.city},{" "}
-                  {checkoutForm.uf}
+                  {checkoutForm.uf.toUpperCase()}
                 </S.LeftContentDescription>
               </div>
             </S.LeftContent>
