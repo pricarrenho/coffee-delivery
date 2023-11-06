@@ -13,7 +13,7 @@ export const Select = ({ option, select, ...props }: SelectProps) => {
 
   return (
     <S.SelectWrapper $isSelect={isSelect} {...props}>
-      <CreditCard size={16} color="#8047f8" />
+      <CreditCard size={20} color="#8047f8" />
       <S.OptionName>{option}</S.OptionName>
     </S.SelectWrapper>
   );

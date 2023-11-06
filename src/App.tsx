@@ -4,6 +4,8 @@ import { GlobalStyle } from "./styles/global";
 import { BrowserRouter } from "react-router-dom";
 import { Routes } from "./routes";
 import { GlobalProvider } from "./context/GlobalContext";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export function App() {
   return (
@@ -14,6 +16,7 @@ export function App() {
         </BrowserRouter>
 
         <GlobalStyle />
+        <ToastContainer />
       </ThemeProvider>
     </GlobalProvider>
   );

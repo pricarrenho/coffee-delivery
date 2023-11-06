@@ -107,7 +107,7 @@ export const LeftContentDescription = styled.div`
   ${({ theme }) => css`
     font-size: ${theme.font.sizes.ml};
     font-weight: 400;
-    line-height: 130%;
+    line-height: 150%;
     color: ${theme.colors.neutral[700]};
 
     span {

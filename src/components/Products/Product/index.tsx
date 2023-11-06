@@ -5,6 +5,7 @@ import { useGlobalContext } from "../../../context/GlobalContext";
 import { useState } from "react";
 import { formattedPrice } from "../../../utils/formatter";
 import { ProductsProps } from "./type";
+import { toast } from "react-toastify";
 import * as S from "./styles";
 
 export const Product = ({ data }: ProductsProps) => {
@@ -13,8 +14,20 @@ export const Product = ({ data }: ProductsProps) => {
     selectProducts.filter((item) => item.id === data.id)[0]?.totalItens || 1;
   const [productQtd, setProductQtd] = useState(contextProductQtd);
 
-  const handleClick = (data: PageDataProducts) => {
+  const handleAddProduct = (data: PageDataProducts) => {
     data.totalItens = productQtd;
+
+    toast.success(`Colocado ${data.title} no carrinho`, {
+      position: "top-right",
+      // autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      style: { fontSize: "16px" },
+    });
 
     handleProducts(data);
   };
@@ -47,7 +60,7 @@ export const Product = ({ data }: ProductsProps) => {
         <Button
           styleType={"tertiary"}
           icon={"cart"}
-          onClick={() => handleClick(data)}
+          onClick={() => handleAddProduct(data)}
         />
       </S.ProductSecondContent>
     </S.Product>

@@ -17,7 +17,7 @@ export const SelectWrapper = styled.button<WrapperProps>`
   ${({ theme, $isSelect }) => css`
     background-color: ${theme.colors.neutral[400]};
     display: flex;
-    padding: 8px;
+    padding: 16px;
     justify-content: center;
     align-items: center;
     gap: 12px;

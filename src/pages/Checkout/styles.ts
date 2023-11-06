@@ -53,6 +53,7 @@ export const AddressAndPaymentTitle = styled.h3`
     font-size: ${theme.font.sizes.ml};
     font-weight: 400;
     line-height: 130%;
+    margin-bottom: 8px;
   `}
 `;
 
@@ -190,7 +191,11 @@ export const CheckoutValueWrapper = styled.div`
   ${() => css`
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
+
+    @media (min-width: 800px) {
+      gap: 16px;
+    }
   `}
 `;
 
