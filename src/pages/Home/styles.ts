@@ -32,7 +32,7 @@ export const TitleContent = styled.div`
   ${() => css`
     display: flex;
     flex-direction: column;
-    gap: 0px;
+    gap: 8px;
 
     @media (min-width: 800px) {
       gap: 16px;
@@ -70,7 +70,7 @@ export const ServicesContentContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     column-gap: 36px;
-    row-gap: 0px;
+    row-gap: 16px;
 
     @media (min-width: 800px) {
       grid-template-columns: auto 1fr;

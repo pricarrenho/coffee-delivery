@@ -18,14 +18,7 @@ export const Product = ({ data }: ProductsProps) => {
     data.totalItens = productQtd;
 
     toast.success(`Colocado ${data.title} no carrinho`, {
-      position: "top-right",
-      // autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
+      autoClose: 3000,
       style: { fontSize: "16px" },
     });
 

@@ -1,7 +1,7 @@
 import { ShoppingCart } from "@phosphor-icons/react";
 import { useNavigate } from "react-router-dom";
-import * as S from "./styles";
 import { useGlobalContext } from "../../context/GlobalContext";
+import * as S from "./styles";
 
 export const Cart = () => {
   const { selectProducts } = useGlobalContext();

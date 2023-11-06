@@ -62,7 +62,7 @@ export const Tag = styled.div`
       background: ${theme.colors.yellow[300]};
       border-radius: 100px;
       color: ${theme.colors.yellow[700]};
-      font-size: ${theme.font.sizes.ms};
+      font-size: ${theme.font.sizes.ml};
       font-weight: 700;
       text-transform: uppercase;
     }

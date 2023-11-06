@@ -1,5 +1,6 @@
 import { InputNumberProps } from "./types";
 import * as S from "./styles";
+import { toast } from "react-toastify";
 
 export const InputNumber = ({ value, onChange }: InputNumberProps) => {
   const handleDecrementProduct = () => {
@@ -9,6 +10,14 @@ export const InputNumber = ({ value, onChange }: InputNumberProps) => {
   };
 
   const handleIncreaseProduct = () => {
+    if (value >= 10) {
+      toast.error("Permitido apenas 10 itens por produto", {
+        style: { fontSize: "16px" },
+      });
+
+      return;
+    }
+
     onChange(value + 1);
   };
 

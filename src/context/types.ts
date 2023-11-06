@@ -8,6 +8,8 @@ export type GlobalProviderProps = {
 export type GlobalContextType = {
   selectProducts: ProductsData[];
   handleProducts: (value: ProductsData) => void;
+  handleRemoveProduct: (value: ProductsData) => void;
+  handleRemoveProducts: () => void;
   checkoutForm: CheckoutFormProps;
   handleCheckoutForm: (value: CheckoutFormProps) => void;
 };

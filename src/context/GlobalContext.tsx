@@ -35,6 +35,16 @@ export const GlobalProvider = ({ children }: GlobalProviderProps) => {
     setSelectProducts(newObj);
   };
 
+  const handleRemoveProduct = (value: ProductsData) => {
+    const newObj = selectProducts.filter((item) => item !== value);
+
+    setSelectProducts(newObj);
+  };
+
+  const handleRemoveProducts = () => {
+    setSelectProducts([]);
+  };
+
   const handleCheckoutForm = (value: CheckoutFormProps) => {
     setCheckoutForm(value);
   };
@@ -44,6 +54,8 @@ export const GlobalProvider = ({ children }: GlobalProviderProps) => {
       value={{
         selectProducts,
         handleProducts,
+        handleRemoveProduct,
+        handleRemoveProducts,
         checkoutForm,
         handleCheckoutForm,
       }}

@@ -12,7 +12,8 @@ import { useNavigate } from "react-router-dom";
 import * as S from "./styles";
 
 export function Checkout() {
-  const { selectProducts, handleCheckoutForm } = useGlobalContext();
+  const { selectProducts, handleCheckoutForm, handleRemoveProducts } =
+    useGlobalContext();
   const navigate = useNavigate();
 
   const [street, setStreet] = useState("");
@@ -65,11 +66,21 @@ export function Checkout() {
   const handleConfirmation = () => {
     handleCheckoutForm(checkoutInformation);
 
+    handleRemoveProducts();
+
     navigate("/success");
   };
 
   const handlePaymentOptions = (value: string) => {
     setPayment(value);
+  };
+
+  const handleCepChange = (value: string) => {
+    const numericValue = value.replace(/\D/g, "").slice(0, 8);
+
+    const formattedValue = numericValue.replace(/(\d{5})(\d)/, "$1-$2");
+
+    setCep(formattedValue);
   };
 
   return (
@@ -99,7 +110,7 @@ export function Checkout() {
                 name="cep"
                 placeholder="CEP"
                 value={cep}
-                onChange={setCep}
+                onChange={handleCepChange}
               />
             </S.ContentFormCEP>
 

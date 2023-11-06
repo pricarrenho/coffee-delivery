@@ -25,7 +25,7 @@ const WrapperModifier = {
   secondary: (theme: DefaultTheme) => css`
     background: ${theme.colors.neutral[400]};
     color: ${theme.colors.neutral[700]};
-    font-size: ${theme.font.sizes.ms};
+    font-size: ${theme.font.sizes.ml};
     padding: 8px 16px;
     font-weight: 400;
 

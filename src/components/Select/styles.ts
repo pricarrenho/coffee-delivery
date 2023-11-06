@@ -37,7 +37,7 @@ export const SelectWrapper = styled.button<WrapperProps>`
 export const OptionName = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.neutral[700]};
-    font-size: ${theme.font.sizes.ms};
+    font-size: ${theme.font.sizes.ml};
     font-weight: 400;
     line-height: 160%;
     text-transform: uppercase;
