@@ -13,7 +13,7 @@ export const InputNumberBtn = styled.button`
   ${({ theme }) => css`
     border: none;
     cursor: pointer;
-    background-color: ${theme.colors.white};
+    background-color: ${theme.colors.neutral[100]};
     color: ${theme.colors.purple[500]};
     outline: none;
     font-size: ${theme.font.sizes.l};
@@ -24,7 +24,7 @@ export const InputNumberBtn = styled.button`
 export const InputNumber = styled.input`
   ${({ theme }) => css`
     border: none;
-    background-color: ${theme.colors.white};
+    background-color: ${theme.colors.neutral[100]};
     width: 24px;
     text-align: center;
     outline: none;
