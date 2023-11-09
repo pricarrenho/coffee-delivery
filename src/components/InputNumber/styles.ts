@@ -28,7 +28,7 @@ export const InputNumber = styled.input`
     width: 24px;
     text-align: center;
     outline: none;
-    padding: 8px;
+    padding: 9px;
     font-size: ${theme.font.sizes.lm};
 
     &::-webkit-outer-spin-button {
