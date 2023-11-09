@@ -122,8 +122,8 @@ export const IconContainer = styled.div<IconProps>`
 `;
 
 export const IconImage = styled.img`
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
 `;
 
 export const ServiceDescription = styled.p`

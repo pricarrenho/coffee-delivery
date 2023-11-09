@@ -10,7 +10,10 @@ export const Wrapper = styled.header`
 `;
 
 export const Image = styled.img`
-  ${() => css``}
+  ${() => css`
+    width: 95px;
+    height: 50px;
+  `}
 `;
 
 export const RightContent = styled.div`
