@@ -22,7 +22,10 @@ export function Home() {
             {pageData?.productInfos.map((productInfo) => (
               <S.ServiceContent key={productInfo.id}>
                 <S.IconContainer $styleType={productInfo.color}>
-                  <S.IconImage src={productInfo.icon.url} alt="" />
+                  <S.IconImage
+                    src={productInfo.icon.url}
+                    alt={`Ícone de ${productInfo.description}`}
+                  />
                 </S.IconContainer>
                 <S.ServiceDescription>
                   {productInfo.description}

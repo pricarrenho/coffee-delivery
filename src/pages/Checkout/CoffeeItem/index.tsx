@@ -23,7 +23,7 @@ export function CoffeeItem({ product }: CoffeeItemProps) {
   return (
     <S.CheckoutCoffeeWrapper>
       <S.CheckoutCoffee>
-        <S.Image src={product.image.url} alt="" />
+        <S.Image src={product.image.url} alt={product.description} />
 
         <div>
           <S.CheckoutCoffeeName>{product.title}</S.CheckoutCoffeeName>

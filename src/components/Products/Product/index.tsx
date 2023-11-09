@@ -6,10 +6,12 @@ import { useState } from "react";
 import { formattedPrice } from "../../../utils/formatter";
 import { ProductsProps } from "./type";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 import * as S from "./styles";
 
 export const Product = ({ data }: ProductsProps) => {
   const { handleProducts, selectProducts } = useGlobalContext();
+  const navigate = useNavigate();
   const contextProductQtd =
     selectProducts.filter((item) => item.id === data.id)[0]?.totalItens || 1;
   const [productQtd, setProductQtd] = useState(contextProductQtd);
@@ -17,10 +19,15 @@ export const Product = ({ data }: ProductsProps) => {
   const handleAddProduct = (data: PageDataProducts) => {
     data.totalItens = productQtd;
 
-    toast.success(`Colocado ${data.title} no carrinho`, {
-      autoClose: 3000,
-      style: { fontSize: "16px" },
-    });
+    toast.success(
+      <div onClick={() => navigate("/checkout")}>
+        Colocado {data.title} no carrinho
+      </div>,
+      {
+        autoClose: 3000,
+        style: { fontSize: "16px" },
+      }
+    );
 
     handleProducts(data);
   };
@@ -29,7 +36,7 @@ export const Product = ({ data }: ProductsProps) => {
     <S.Product key={data.id}>
       <S.ProductFirstContentWrapper>
         <S.ProductFirstContent>
-          <S.Image src={data.image.url} alt="" />
+          <S.Image src={data.image.url} alt={data.description} />
 
           <S.Tag>
             {data.tags.map((tag) => (
