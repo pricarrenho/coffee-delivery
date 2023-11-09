@@ -27,6 +27,7 @@ export const InputNumber = ({ value, onChange }: InputNumberProps) => {
       <S.InputNumber
         type="number"
         name="numberOfProducts"
+        aria-label={`${value.toString()} produto selecionado`}
         value={value}
         onChange={(event) => onChange(Number(event.target.value))}
       />
