@@ -8,7 +8,7 @@ export const Product = styled.div`
     align-items: center;
     gap: 16px;
     border-radius: 6px 36px;
-    background-color: ${theme.colors.neutral[200]};
+    background-color: ${theme.colors.neutral[400]};
     padding: 20px;
   `}
 `;
@@ -59,9 +59,9 @@ export const Tag = styled.div`
 
     p {
       padding: 8px 16px;
-      background: ${theme.colors.yellow[300]};
+      background: ${theme.colors.purple[500]};
       border-radius: 100px;
-      color: ${theme.colors.yellow[700]};
+      color: ${theme.colors.purple[300]};
       font-size: ${theme.font.sizes.ml};
       font-weight: 700;
       text-transform: uppercase;
