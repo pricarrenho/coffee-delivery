@@ -3,9 +3,17 @@ import { Header } from "../../components/Header";
 import { Products } from "../../components/Products";
 import { useHome } from "./useHome";
 import * as S from "./styles";
+import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react";
 
 export function Home() {
   const { pageData } = useHome();
+
+  const icons = {
+    coffee: <Coffee size={20} color="#ffffff" weight="fill" />,
+    time: <Timer size={20} color="#ffffff" weight="fill" />,
+    package: <Package size={20} color="#ffffff" weight="fill" />,
+    shoppingCart: <ShoppingCart size={20} color="#ffffff" weight="fill" />,
+  };
 
   return (
     <Container>
@@ -22,12 +30,7 @@ export function Home() {
             {pageData?.productInfos.map((productInfo) => (
               <S.ServiceContent key={productInfo.id}>
                 <S.IconContainer $styleType={productInfo.color}>
-                  <S.IconImage
-                    src={productInfo.icon.url}
-                    width={16}
-                    height={16}
-                    alt={`Ícone de ${productInfo.description}`}
-                  />
+                  {icons[productInfo.icon.name]}
                 </S.IconContainer>
                 <S.ServiceDescription>
                   {productInfo.description}

@@ -11,7 +11,7 @@ export const GET_HOME_PAGE = gql`
       productInfos {
         id
         icon {
-          url
+          name
         }
         description
         color

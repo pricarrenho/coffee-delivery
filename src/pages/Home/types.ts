@@ -15,7 +15,9 @@ export type PageDataImage = {
 export type PageDataProductInfos = {
   id: string;
   description: string;
-  icon: PageDataImage;
+  icon: {
+    name: "coffee" | "time" | "package" | "shoppingCart";
+  };
   color: IconContainerType;
 };
 

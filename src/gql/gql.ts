@@ -13,7 +13,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
-    "\n  query getPages($slug: String) {\n    page(where: { slug: $slug }) {\n      title\n      subtitle\n      image {\n        url\n      }\n      productInfos {\n        id\n        icon {\n          url\n        }\n        description\n        color\n      }\n      products {\n        id\n        image {\n          url\n        }\n        tags {\n          title\n        }\n        title\n        description\n        value\n      }\n    }\n  }\n": types.GetPagesDocument,
+    "\n  query getPages($slug: String) {\n    page(where: { slug: $slug }) {\n      title\n      subtitle\n      image {\n        url\n      }\n      productInfos {\n        id\n        icon {\n          name\n        }\n        description\n        color\n      }\n      products {\n        id\n        image {\n          url\n        }\n        tags {\n          title\n        }\n        title\n        description\n        value\n      }\n    }\n  }\n": types.GetPagesDocument,
 };
 
 /**
@@ -33,7 +33,7 @@ export function graphql(source: string): unknown;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  query getPages($slug: String) {\n    page(where: { slug: $slug }) {\n      title\n      subtitle\n      image {\n        url\n      }\n      productInfos {\n        id\n        icon {\n          url\n        }\n        description\n        color\n      }\n      products {\n        id\n        image {\n          url\n        }\n        tags {\n          title\n        }\n        title\n        description\n        value\n      }\n    }\n  }\n"): (typeof documents)["\n  query getPages($slug: String) {\n    page(where: { slug: $slug }) {\n      title\n      subtitle\n      image {\n        url\n      }\n      productInfos {\n        id\n        icon {\n          url\n        }\n        description\n        color\n      }\n      products {\n        id\n        image {\n          url\n        }\n        tags {\n          title\n        }\n        title\n        description\n        value\n      }\n    }\n  }\n"];
+export function graphql(source: "\n  query getPages($slug: String) {\n    page(where: { slug: $slug }) {\n      title\n      subtitle\n      image {\n        url\n      }\n      productInfos {\n        id\n        icon {\n          name\n        }\n        description\n        color\n      }\n      products {\n        id\n        image {\n          url\n        }\n        tags {\n          title\n        }\n        title\n        description\n        value\n      }\n    }\n  }\n"): (typeof documents)["\n  query getPages($slug: String) {\n    page(where: { slug: $slug }) {\n      title\n      subtitle\n      image {\n        url\n      }\n      productInfos {\n        id\n        icon {\n          name\n        }\n        description\n        color\n      }\n      products {\n        id\n        image {\n          url\n        }\n        tags {\n          title\n        }\n        title\n        description\n        value\n      }\n    }\n  }\n"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};
