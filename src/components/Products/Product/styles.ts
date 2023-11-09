@@ -59,9 +59,9 @@ export const Tag = styled.div`
 
     p {
       padding: 8px 16px;
-      background: ${theme.colors.yellow[500]};
+      background: ${theme.colors.purple[700]};
       border-radius: 100px;
-      color: ${theme.colors.neutral[300]};
+      color: ${theme.colors.white};
       font-size: ${theme.font.sizes.ml};
       font-weight: 700;
       text-transform: uppercase;
