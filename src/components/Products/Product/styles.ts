@@ -59,9 +59,9 @@ export const Tag = styled.div`
 
     p {
       padding: 8px 16px;
-      background: ${theme.colors.purple[500]};
+      background: ${theme.colors.purple[700]};
       border-radius: 100px;
-      color: ${theme.colors.purple[300]};
+      color: ${theme.colors.neutral[300]};
       font-size: ${theme.font.sizes.ml};
       font-weight: 700;
       text-transform: uppercase;
@@ -81,7 +81,7 @@ export const Description = styled.p`
   ${({ theme }) => css`
     text-align: center;
     font-size: ${theme.font.sizes.ml};
-    color: ${theme.colors.neutral[600]};
+    color: ${theme.colors.neutral[700]};
   `}
 `;
 
