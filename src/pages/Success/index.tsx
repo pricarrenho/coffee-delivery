@@ -75,6 +75,8 @@ export function Success() {
 
           <S.Image
             src={Illustration}
+            width={492}
+            height={293}
             alt="Entregador em sua moto roxa indo entregar seu pedido"
           />
         </S.ContentWrapper>

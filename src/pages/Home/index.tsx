@@ -24,6 +24,8 @@ export function Home() {
                 <S.IconContainer $styleType={productInfo.color}>
                   <S.IconImage
                     src={productInfo.icon.url}
+                    width={20}
+                    height={20}
                     alt={`Ícone de ${productInfo.description}`}
                   />
                 </S.IconContainer>
@@ -35,7 +37,12 @@ export function Home() {
           </S.ServicesContentContainer>
         </S.LeftContent>
 
-        <S.Image src={pageData?.image.url} alt="" />
+        <S.Image
+          src={pageData?.image.url}
+          width={476}
+          height={360}
+          alt="Imagem de um copo de café para viagem, escrito Coffee Delivery. Em volta dele tem grãos de café inteiros e moídos. Tudo isso com um fundo amarelo e um risco preto fazendo meia lua por volta"
+        />
       </S.Wrapper>
 
       <Products data={pageData?.products} />

@@ -36,7 +36,12 @@ export const Product = ({ data }: ProductsProps) => {
     <S.Product key={data.id}>
       <S.ProductFirstContentWrapper>
         <S.ProductFirstContent>
-          <S.Image src={data.image.url} alt={data.description} />
+          <S.Image
+            src={data.image.url}
+            width={120}
+            height={120}
+            alt={data.description}
+          />
 
           <S.Tag>
             {data.tags.map((tag) => (
@@ -61,6 +66,7 @@ export const Product = ({ data }: ProductsProps) => {
           styleType={"tertiary"}
           icon={"cart"}
           onClick={() => handleAddProduct(data)}
+          aria-label="Colocar no carrinho"
         />
       </S.ProductSecondContent>
     </S.Product>

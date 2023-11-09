@@ -10,6 +10,8 @@ export function Header() {
         <S.Image
           src={Logo}
           alt="Imagem de um copo de café roxo com os escritos Coffee Delivery do lado"
+          width={85}
+          height={40}
         />
       </Link>
 

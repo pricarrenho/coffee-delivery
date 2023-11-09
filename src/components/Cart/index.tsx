@@ -16,7 +16,7 @@ export const Cart = () => {
   };
 
   return (
-    <S.Wrapper onClick={handleClick}>
+    <S.Wrapper onClick={handleClick} aria-label="Ir para o checkout">
       {selectProducts.length > 0 && (
         <S.ItensWrapper>
           <S.ItensNumber>{selectProducts.length}</S.ItensNumber>
