@@ -135,12 +135,12 @@ export const ServiceDescription = styled.p`
 
 export const Image = styled.img`
   ${() => css`
-    width: 350px;
-    height: 300px;
+    width: 100%;
+    height: auto;
 
     @media (min-width: 800px) {
       width: 476px;
-      height: 360px;
+      height: auto;
     }
   `}
 `;

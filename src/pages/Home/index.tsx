@@ -39,8 +39,8 @@ export function Home() {
 
         <S.Image
           src={pageData?.image.url}
-          width={350}
-          height={300}
+          width={476}
+          height={360}
           alt="Imagem de um copo de café para viagem, escrito Coffee Delivery. Em volta dele tem grãos de café inteiros e moídos. Tudo isso com um fundo amarelo e um risco preto fazendo meia lua por volta"
         />
       </S.Wrapper>

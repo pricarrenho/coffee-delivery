@@ -11,8 +11,8 @@ export const Wrapper = styled.header`
 
 export const Image = styled.img`
   ${() => css`
-    width: 95px;
-    height: 50px;
+    width: 85px;
+    height: 40px;
   `}
 `;
 
