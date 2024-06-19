@@ -1,27 +1,72 @@
-# React + TypeScript + Vite
+<h1 align="center">
+    <img alt="Coffee Delivery" title="Coffee Delivery" src=".github/assets/coffeeDelivery.png" />
+</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-preview">Preview</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-Getting-started">Getting started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-project">Project</a>
+</p>
 
-Currently, two official plugins are available:
+## 🧪 Technologies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project was developed using the following technologies:
 
-## Expanding the ESLint configuration
+- [React](https://reactjs.org/)
+- [Styled Components](https://styled-components.com/)
+- [TypeScript](https://www.typescriptlang.org/)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 🔥 Preview
 
-- Configure the top-level `parserOptions` property like this:
+[![Deploy with Vercel](https://vercel.com/button)](https://coffee-delivery.pricarrenho.com.br/)
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+## 🚀 Getting started
+
+Clone the project and access the folder
+
+```bash
+$ git clone https://github.com/pricarrenho/coffee-delivery && cd coffee-delivery
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Add environment
+
+```bash
+# Add your environment variable based on .env.example
+NEXT_PUBLIC_GRAPHQL_URL=//add here your graphql url
+
+```
+
+Follow the steps below
+
+```bash
+# Install the dependencies
+$ npm install
+
+# Start the project
+$ npm start
+
+```
+
+Or with Yarn
+
+```bash
+# Install the dependencies
+$ yarn install
+
+# Start the project
+$ yarn start
+
+```
+
+## 💻 Project
+
+[Coffee Delivery](https://coffee-delivery.pricarrenho.com.br/) was developed to validate knowledge in React.
+
+<br/>
+
+---
+
+<p align="center">
+Made with 💜 by <a href="https://www.pricarrenho.com.br">Priscilla Carrenho</a> 
+</p>
